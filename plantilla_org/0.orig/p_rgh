@@ -1,0 +1,20 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      p_rgh;
+}
+
+dimensions      [1 -1 -2 0 0 0 0];
+internalField   uniform 0;
+
+boundaryField
+{
+    entrada       { type fixedFluxPressure; value uniform 0; }
+    compuerta     { type fixedFluxPressure; value uniform 0; }
+    paredes       { type fixedFluxPressure; value uniform 0; }
+    salida        { type zeroGradient; }
+    atmosfera     { type prghTotalPressure; p0 uniform 0; value uniform 0; }
+    frenteYFondo  { type empty; }
+}

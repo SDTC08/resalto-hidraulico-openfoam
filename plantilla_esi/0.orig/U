@@ -1,0 +1,20 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    object      U;
+}
+
+dimensions      [0 1 -1 0 0 0 0];
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+    entrada       { type fixedValue; value uniform (@@V1@@ 0 0); }
+    compuerta     { type noSlip; }
+    paredes       { type noSlip; }
+    salida        { type inletOutlet; inletValue uniform (0 0 0); value uniform (0 0 0); }
+    atmosfera     { type pressureInletOutletVelocity; value uniform (0 0 0); }
+    frenteYFondo  { type empty; }
+}

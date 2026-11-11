@@ -1,0 +1,14 @@
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      physicalProperties.water;
+}
+// Plantilla para OpenFOAM openfoam.org (v11+), basada en el tutorial
+// incompressibleVoF/weirOverflow de OpenFOAM 14.
+
+viscosityModel  constant;
+
+nu              1e-06;
+
+rho             1000;

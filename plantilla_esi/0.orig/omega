@@ -1,0 +1,20 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      omega;
+}
+
+dimensions      [0 0 -1 0 0 0 0];
+internalField   uniform @@OMEGA_IN@@;
+
+boundaryField
+{
+    entrada       { type fixedValue; value uniform @@OMEGA_IN@@; }
+    compuerta     { type omegaWallFunction; value uniform @@OMEGA_IN@@; }
+    paredes       { type omegaWallFunction; value uniform @@OMEGA_IN@@; }
+    salida        { type inletOutlet; inletValue uniform @@OMEGA_IN@@; value uniform @@OMEGA_IN@@; }
+    atmosfera     { type inletOutlet; inletValue uniform @@OMEGA_IN@@; value uniform @@OMEGA_IN@@; }
+    frenteYFondo  { type empty; }
+}

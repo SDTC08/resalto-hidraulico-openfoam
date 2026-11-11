@@ -1,0 +1,20 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      k;
+}
+
+dimensions      [0 2 -2 0 0 0 0];
+internalField   uniform @@K_IN@@;
+
+boundaryField
+{
+    entrada       { type fixedValue; value uniform @@K_IN@@; }
+    compuerta     { type kqRWallFunction; value uniform @@K_IN@@; }
+    paredes       { type kqRWallFunction; value uniform @@K_IN@@; }
+    salida        { type inletOutlet; inletValue uniform @@K_IN@@; value uniform @@K_IN@@; }
+    atmosfera     { type inletOutlet; inletValue uniform @@K_IN@@; value uniform @@K_IN@@; }
+    frenteYFondo  { type empty; }
+}

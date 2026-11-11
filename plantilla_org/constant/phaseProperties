@@ -1,0 +1,12 @@
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      phaseProperties;
+}
+// Plantilla para OpenFOAM openfoam.org (v11+), basada en el tutorial
+// incompressibleVoF/weirOverflow de OpenFOAM 14.
+
+phases          (water air);
+
+sigma           0.07;

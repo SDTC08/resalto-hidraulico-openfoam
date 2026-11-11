@@ -1,0 +1,16 @@
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      momentumTransport;
+}
+// Plantilla para OpenFOAM openfoam.org (v11+), basada en el tutorial
+// incompressibleVoF/weirOverflow de OpenFOAM 14.
+
+simulationType  RAS;
+
+RAS
+{
+    model           kOmegaSST;
+    turbulence      on;
+}

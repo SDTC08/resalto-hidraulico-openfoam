@@ -1,0 +1,42 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      alpha.water;
+}
+
+dimensions      [0 0 0 0 0 0 0];
+// Estado inicial: lámina supercrítica (y1) desde la compuerta hasta x_ini
+// y remanso de cola desde x_ini hasta el final de la cresta.
+internalField
+{
+    type            zonal;
+    defaultValue    0;
+
+    zones
+    {
+        laminaSupercritica
+        {
+            type            box;
+            box             (-1 -1 -1) (@@X_INI@@ 1 @@Y1@@);
+            value           1;
+        }
+        remansoCola
+        {
+            type            box;
+            box             (@@X_INI@@ -1 -1) (@@X_FIN_COLA@@ 1 @@Y_COLA@@);
+            value           1;
+        }
+    }
+}
+
+boundaryField
+{
+    entrada       { type fixedValue; value uniform 1; }
+    compuerta     { type zeroGradient; }
+    paredes       { type zeroGradient; }
+    salida        { type zeroGradient; }
+    atmosfera     { type inletOutlet; inletValue uniform 0; value uniform 0; }
+    frenteYFondo  { type empty; }
+}

@@ -1,0 +1,37 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      setFieldsDict;
+}
+
+// Estado inicial: lámina supercrítica (y1, V1) desde la compuerta hasta x_ini
+// y remanso de cola (y_cola) desde x_ini hasta el umbral.
+defaultFieldValues
+(
+    volScalarFieldValue alpha.water 0
+    volVectorFieldValue U (0 0 0)
+);
+
+regions
+(
+    boxToCell
+    {
+        box (-1 -1 -1) (@@X_INI@@ 1 @@Y1@@);
+        fieldValues
+        (
+            volScalarFieldValue alpha.water 1
+            volVectorFieldValue U (@@V1@@ 0 0)
+        );
+    }
+    boxToCell
+    {
+        box (@@X_INI@@ -1 -1) (@@X_FIN_COLA@@ 1 @@Y_COLA@@);
+        fieldValues
+        (
+            volScalarFieldValue alpha.water 1
+            volVectorFieldValue U (@@V_COLA@@ 0 0)
+        );
+    }
+);

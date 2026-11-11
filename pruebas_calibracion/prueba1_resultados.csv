@@ -1,0 +1,2 @@
+caso,Fr_nominal,q_m2s,t_final_s,n_tiempos_promediados,x_pie_m,x_fin_m,y1_pie_m,y2_sim_m,fr_pie,y2_y1_sim,y2_y1_belanger,error_pct,L_resalto_m,L_resalto_sobre_y2,velocidad_pie_m_s,estado
+Fr4p00,4.0,0.10023,30.0,19,0.555,1.695,0.04401,0.19167,3.46556,4.35477,4.42648,-1.6202,1.14,5.94779,0.02565,libre (cuasi-estacionario)
