@@ -1,0 +1,14 @@
+# Entorno de Python e instalación local
+.venv/
+__pycache__/
+*.pyc
+
+# Datos de cada usuario (no se publican)
+estudios/
+cola/
+ajustes.json
+app.log
+
+# Resultados del modo línea de comandos
+casos/
+resultados/

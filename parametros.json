@@ -1,0 +1,33 @@
+{
+  "_nota": "Unidades SI. Edite este archivo y vuelva a ejecutar generar_casos.py",
+  "rama_openfoam": "auto",
+  "g": 9.81,
+  "y1": 0.04,
+  "Fr1": [4.0, 5.0, 6.0, 7.0, 8.0],
+
+  "factor_cola": 1.00,
+  "cd_umbral": 0.85,
+
+  "geometria": {
+    "L_canal_min": 2.0,
+    "L_canal_en_y2": 12.0,
+    "L_cresta_min": 0.30,
+    "techo_sobre_cola": 1.4
+  },
+
+  "malla": {
+    "celdas_en_y1": 5,
+    "relacion_dx_dz": 1.25
+  },
+
+  "turbulencia_entrada": {
+    "intensidad": 0.05,
+    "escala_en_y1": 0.07
+  },
+
+  "x_inicial_resalto_en_L": 0.25,
+  "tiempo_final": 30.0,
+  "intervalo_escritura": 0.5,
+  "fraccion_promedio": 0.3,
+  "nucleos": 4
+}
